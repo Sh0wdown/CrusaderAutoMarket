@@ -81,7 +81,7 @@ static void InitializeHooks()
 
     ASM::Hook((LPVOID)0x0057C3B9, 6, &UpdateGameCallback); // Triggered after game loop (not every simulated day, but every tick). // 0x0057C7E9
     ASM::Hook((LPVOID)0x00512438, 6, &EnterLeaveGameCallback); // Triggered when leaving (or starting?) a game. // 0x005127B8
-    ASM::Hook((LPVOID)0x00474A20, 5, &EnterLeaveGameCallback); // Triggered when starting a game.
+    ASM::Hook((LPVOID)0x00474A20, 5, &EnterLeaveGameCallback); // Triggered when starting a game. // 0x00474C50
 
     // Don't disable the market the pop-up for the player.
     {
