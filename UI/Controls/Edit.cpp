@@ -218,7 +218,6 @@ bool Edit::OnChar(int ch)
 	if (!IsCharInvalid(ch))
 	{
 		InsertChar(ch);
-		OnChanged();
 	}
 	return true;
 }
@@ -316,6 +315,8 @@ void Edit::EraseChar()
 	m_cursorPos = start;
 
 	Redraw();
+
+	OnChanged();
 }
 
 void Edit::InsertChar(int ch)
@@ -333,6 +334,8 @@ void Edit::InsertChar(int ch)
 	++m_cursorPos;
 
 	Redraw();
+
+	OnChanged();
 }
 
 void Edit::MoveCursor(int dist)
